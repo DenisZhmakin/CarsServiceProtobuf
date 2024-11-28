@@ -11,6 +11,7 @@ message CarResponse {
   int64 id = 1;
   string name = 2;
   int64 carTypeId = 3;
+  string carTypeValue = 4;
 }
 
 message ListCarResponse {
