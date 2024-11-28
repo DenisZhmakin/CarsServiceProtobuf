@@ -1,15 +1,23 @@
 syntax = "proto3";
 
+message CarRequestEmptyRequest {}
+
 message CarRequest {
   string name = 1;
-  string carType = 2;
+  int64 carTypeId = 2;
 }
 
 message CarResponse {
   int64 id = 1;
   string name = 2;
+  int64 carTypeId = 3;
+}
+
+message ListCarResponse {
+  repeated CarResponse cars = 1;
 }
 
 service CarService {
-    rpc AddCar(CarRequest) returns (CarResponse);
+    rpc AddNewCar(CarRequest) returns (CarResponse) {};
+    rpc GetAllCars(CarRequestEmptyRequest) returns (ListCarResponse) {};
 }
