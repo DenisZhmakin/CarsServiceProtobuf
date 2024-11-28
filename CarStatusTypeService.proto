@@ -17,5 +17,5 @@ message ListCarStatusTypeResponse {
 
 service CarStatusTypeService {
   rpc AddNewCarStatusType(CarStatusTypeRequest) returns (CarStatusTypeResponse) {};
-  rpc GetAllCarStatusType(CarStatusTypeEmptyRequest) returns (ListCarStatusTypeResponse) {};
+  rpc GetAllCarStatusTypes(CarStatusTypeEmptyRequest) returns (ListCarStatusTypeResponse) {};
 }
