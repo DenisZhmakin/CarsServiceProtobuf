@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message CarStatusTypeEmptyRequest {}
+
+message CarStatusTypeRequest {
+  string value = 1;
+}
+
+message CarStatusTypeResponse {
+  int64 id = 1;
+  string value = 2;
+}
+
+message ListCarStatusTypeResponse {
+  repeated CarStatusTypeResponse carStatusTypes = 1;
+}
+
+service CarStatusTypeService {
+  rpc AddNewCarStatusType(CarStatusTypeRequest) returns (CarStatusTypeResponse) {};
+  rpc GetAllCarStatusType(CarStatusTypeEmptyRequest) returns (ListCarStatusTypeResponse) {};
+}
