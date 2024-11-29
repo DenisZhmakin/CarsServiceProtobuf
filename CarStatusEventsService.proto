@@ -19,6 +19,15 @@ message CarStatusEventsResponse {
   google.protobuf.Duration activeStatusTime = 8;
 }
 
+message CarStatusEventsCarIdRequest {
+  int64 carId = 1;
+}
+
+message ListCarStatusEventsResponse {
+  repeated CarStatusEventsResponse statuses = 1;
+}
+
 service CarStatusEventsService {
   rpc AddNewCarStatusEvents(CarStatusEventsRequest) returns (CarStatusEventsResponse) {};
+  rpc GetAllCarStatusEventsByCarID(CarStatusEventsCarIdRequest) returns (ListCarStatusEventsResponse) {};
 }
