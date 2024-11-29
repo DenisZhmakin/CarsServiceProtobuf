@@ -13,7 +13,7 @@ message CarStatusEventsResponse {
   int64 statusTypeId = 5;
   string statusValue = 6;
   string timeOfRegistration = 7;
-  int64 activeStatusTime = 8;
+  int64 activeStatusSeconds = 8;
 }
 
 message CarStatusEventsCarIdRequest {
