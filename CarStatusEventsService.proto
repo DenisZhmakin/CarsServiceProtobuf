@@ -7,7 +7,7 @@ message CarStatusEventsRequest {
 
 message CarStatusEventsResponse {
   int64 id = 1;
-  int32 index = 2;
+  int64 index = 2;
   int64 carId = 3;
   string carName = 4;
   int64 statusTypeId = 5;
