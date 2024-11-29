@@ -1,8 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/duration.proto";
-
 message CarStatusEventsRequest {
   int64 carId = 2;
   int64 statusTypeId = 3;
@@ -15,8 +12,8 @@ message CarStatusEventsResponse {
   string carName = 4;
   int64 statusTypeId = 5;
   string statusValue = 6;
-  google.protobuf.Timestamp timeOfRegistration = 7;
-  google.protobuf.Duration activeStatusTime = 8;
+  string timeOfRegistration = 7;
+  string activeStatusTime = 8;
 }
 
 message CarStatusEventsCarIdRequest {
