@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message CarStatusEventsRequest {
+  int64 carId = 2;
+  int64 statusTypeId = 3;
+}
+
+message CarStatusEventsResponse {
+  int64 id = 1;
+  int32 index = 2;
+  int64 carId = 3;
+  string carName = 4;
+  int64 statusTypeId = 5;
+  string statusValue = 6;
+  google.protobuf.Timestamp timeOfRegistration = 7;
+  google.protobuf.Duration activeStatusTime = 8;
+}
+
+service CarStatusEventsService {
+  rpc AddNewCarStatusEvents(CarStatusEventsRequest) returns (CarStatusEventsResponse) {};
+}
